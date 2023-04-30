@@ -1,5 +1,5 @@
 ﻿#Define your remote target(s) here
-$Rmtebox = "<yourboxhere>"
+$Remote = "<remotehost1>", "<remotehost2>"
 
 #Tailor your commands to your output desires
 $Cmd = {
@@ -18,7 +18,7 @@ $Cmd = {
 $Cred = Get-Credential "<username>"
 
 #Loops in every device define in your $Rmtebox variable (You may also comment out this line if your situation call for one box instead of multiple)
-foreach ($box in $rmtebox){
+foreach ($host in $Remote){
 #Invoke command allows us to remote into target device and rund the $cmd variable on the remote machine
     Write-host $box
         Invoke-Command -ComputerName -Credential $Cred -ScriptBlock { $Cmd
